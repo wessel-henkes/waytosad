@@ -13,13 +13,13 @@ import java.sql.SQLException;
 public class HelloResource {
 
     @GET
-    @Produces("application/json")
-    public JsonArray handleGreeting() throws SQLException {
-    	 test a = new test(); return a.getArray(a.getConn());
+    @Produces("text/plain")
+    public String handleGreeting() throws SQLException {
+    	return "hello world";
     }
 
     @POST
-    @Produces("application/json")
+    @Produces("text/plain")
     public String andlePost(@FormParam("code") String code){
     System.out.println(code);
     return "done";
