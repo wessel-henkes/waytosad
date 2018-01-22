@@ -2,6 +2,7 @@ package connection;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 public class testConnect {
@@ -9,7 +10,7 @@ public class testConnect {
     private Connection conn  = CO.getConn();
     private Connection conn2 = CO.getConn2();
 
-    public testconneasdf(){
+    public void testconneasdf() throws SQLException{
         //test
         Statement stm = conn.createStatement();
         String queryText = "SELECT id, string FROM test";

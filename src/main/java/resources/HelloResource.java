@@ -1,12 +1,11 @@
 package resources;
 
 import javax.json.JsonArray;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.SecurityContext;
 import connection.test;
+
 
 import java.sql.SQLException;
 
@@ -19,4 +18,10 @@ public class HelloResource {
     	 test a = new test(); return a.getArray(a.getConn());
     }
 
+    @POST
+    @Produces("application/json")
+    public String andlePost(@FormParam("code") String code){
+
+    return "done";
+    }
 }
